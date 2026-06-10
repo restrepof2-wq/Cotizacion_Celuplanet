@@ -1,1 +1,1395 @@
-c:\Proyectos\cotizacion.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Metatags -->
+  <title>Propuesta Comercial // Soporte y Mantenimiento Shopify Premium</title>
+  <meta name="description" content="Propuesta de acompañamiento estratégico y soporte técnico para tiendas Shopify. Bolsa de horas flexible adaptada a la gestión constante de catálogo y precios.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Variables de Diseño */
+    :root {
+      --bg-main: #060913;
+      --bg-card: rgba(13, 20, 38, 0.65);
+      --bg-card-hover: rgba(17, 27, 51, 0.85);
+      --border-glow: rgba(255, 255, 255, 0.06);
+      --border-active: rgba(99, 102, 241, 0.4);
+      --accent-primary: #6366f1; /* Indigo */
+      --accent-secondary: #06b6d4; /* Cyan */
+      --accent-success: #10b981; /* Esmeralda */
+      --accent-warning: #f59e0b; /* Ámbar */
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --font-main: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --shadow-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --shadow-primary: 0 0 20px rgba(99, 102, 241, 0.15);
+    }
+
+    /* Reset & Estilos Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      padding-bottom: 80px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-main);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Estructura & Layout */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+
+    /* Componentes Generales */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-glow);
+      margin-bottom: 24px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-primary {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .badge-secondary {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      font-family: var(--font-main);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-primary), #4f46e5);
+      color: #ffffff;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      border: 1px solid var(--border-glow);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* --- ENCABEZADO --- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .agency-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fillColor: transparent;
+    }
+
+    .agency-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .meta-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 0.82rem;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 8px 16px;
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .meta-value {
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* --- INTRODUCCIÓN --- */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .title-large {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fillColor: transparent;
+    }
+
+    .intro-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .intro-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    /* --- PLANES (TARJETAS) --- */
+    .planes-title {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .plan-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: rgba(99, 102, 241, 0.25);
+    }
+
+    .plan-card.active {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-primary);
+      animation: pulseGlow 4s infinite;
+    }
+
+    .plan-card.active::before {
+      content: '✓ SELECCIONADO';
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent-primary);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    .plan-card.popular {
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .plan-card.popular::after {
+      content: 'MÁS POPULAR';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: var(--accent-secondary);
+      color: #000;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    .plan-header {
+      margin-bottom: 20px;
+    }
+
+    .plan-name {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .plan-hours {
+      font-size: 0.85rem;
+      color: var(--accent-secondary);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .plan-price {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-success);
+    }
+
+    .plan-price-subtitle {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: block;
+      margin-top: -2px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 15px;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .plan-features svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* --- CALCULADORA & ESTIMADOR --- */
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-glow);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      transition: background 0.2s;
+    }
+
+    .task-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .task-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .task-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .task-time {
+      font-size: 0.72rem;
+      color: var(--accent-secondary);
+    }
+
+    .counter-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .counter-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glow);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .counter-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .counter-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      width: 16px;
+      text-align: center;
+    }
+
+    /* Panel de Resultados Calculadora */
+    .calc-results {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(99, 102, 241, 0.02);
+      border: 1px dashed rgba(99, 102, 241, 0.25);
+    }
+
+    .result-block {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .result-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .result-value {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .result-hours {
+      font-size: 1.15rem;
+      color: var(--accent-secondary);
+      font-weight: 700;
+    }
+
+    .slider-group {
+      margin-top: 15px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      margin-bottom: 6px;
+    }
+
+    .custom-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #1e293b;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .custom-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+      transition: transform 0.1s;
+    }
+
+    .custom-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+    }
+
+    .recommendation-badge {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-success);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    /* --- TÉRMINOS & CONDICIONES --- */
+    .terms-list {
+      list-style-type: decimal;
+      padding-left: 20px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* --- FIRMA & ACEPTACIÓN --- */
+    .sign-section {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.02) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+    }
+
+    .sign-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .sign-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .form-input {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: white;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-primary);
+    }
+
+    .signature-pad-sim {
+      border: 1px dashed var(--border-glow);
+      border-radius: var(--radius-sm);
+      background: rgba(0,0,0,0.5);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 0.85rem;
+      position: relative;
+    }
+
+    .signature-rendered {
+      font-family: 'Outfit', cursive;
+      font-size: 1.8rem;
+      color: var(--accent-secondary);
+      letter-spacing: 2px;
+      display: none;
+    }
+
+    .success-overlay {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 0;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    /* --- BOTONES DE ACCIÓN FLOTANTES --- */
+    .actions-bar {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(13, 20, 38, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glow);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+
+    /* --- ESTILOS DE IMPRESIÓN (PDF) --- */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1e293b !important;
+        padding-bottom: 0;
+      }
+
+      .container {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .actions-bar,
+      .counter-controls,
+      .slider-group,
+      .recommendation-badge,
+      .btn,
+      .custom-slider {
+        display: none !important;
+      }
+
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        color: #1e293b !important;
+        page-break-inside: avoid;
+        margin-bottom: 16px;
+        padding: 20px;
+      }
+
+      .plan-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        color: #1e293b !important;
+      }
+
+      .plan-card.active {
+        border: 2px solid #6366f1 !important;
+      }
+
+      .plan-price, .result-value {
+        color: #0f172a !important;
+      }
+
+      .agency-title {
+        background: none !important;
+        -webkit-text-fill-color: #0f172a !important;
+        color: #0f172a !important;
+      }
+
+      .gradient-text {
+        background: none !important;
+        -webkit-text-fill-color: #4f46e5 !important;
+        color: #4f46e5 !important;
+      }
+
+      .meta-box {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      .meta-value {
+        color: #0f172a !important;
+      }
+
+      .bullet-item {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #1e293b !important;
+      }
+
+      .signature-pad-sim {
+        background: #f8fafc !important;
+        border: 1px dashed #cbd5e1 !important;
+      }
+
+      .signature-rendered {
+        display: block !important;
+        color: #4f46e5 !important;
+      }
+
+      .signature-placeholder-text {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container animate-fade-in">
+    
+    <!-- ENCABEZADO -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo-icon">🚀</div>
+        <div>
+          <h1 class="agency-title">AGENCIA DIGITAL</h1>
+          <span class="agency-subtitle">Optimización & Soporte Continuo</span>
+        </div>
+      </div>
+
+      <div class="meta-box">
+        <span class="meta-label">Propuesta No:</span>
+        <span class="meta-value">#SHOPIFY-2026-004</span>
+        <span class="meta-label">Cliente:</span>
+        <span class="meta-value">Marca Celulares (Shopify)</span>
+        <span class="meta-label">Fecha Emisión:</span>
+        <span class="meta-value" id="current-date">10/06/2026</span>
+        <span class="meta-label">Validez:</span>
+        <span class="meta-value">15 Días</span>
+      </div>
+    </header>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="glass-card intro-grid">
+      <div>
+        <span class="badge badge-primary" style="margin-bottom: 12px;">Acompañamiento Estratégico</span>
+        <h2 class="title-large">Gestión Operativa y<br><span class="gradient-text">Mantenimiento Shopify</span></h2>
+        <p class="intro-text">
+          Una tienda de celulares exitosa requiere dinamismo. Para delegar la constante actualización de precios, gestión de stock, lanzamientos de nuevos modelos y ajustes técnicos, te proponemos un esquema de <strong>bolsa de horas de soporte flexible</strong>.
+        </p>
+        <p class="intro-text" style="font-size: 0.88rem;">
+          Terceriza los cambios técnicos operativos del día a día para que tu equipo se concentre al 100% en la venta y la atención al cliente.
+        </p>
+      </div>
+      <div class="intro-bullets">
+        <div class="bullet-item">
+          <span>⚡</span>
+          <span>Actualización rápida de precios y stock</span>
+        </div>
+        <div class="bullet-item">
+          <span>📱</span>
+          <span>Carga de nuevos productos y descripciones</span>
+        </div>
+        <div class="bullet-item">
+          <span>🔧</span>
+          <span>Ajustes visuales y optimización de velocidad</span>
+        </div>
+        <div class="bullet-item">
+          <span>🔗</span>
+          <span>Integraciones de pasarelas y apps de venta</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES DE BOLSA DE HORAS -->
+    <h3 class="planes-title">Bolsas de Horas Mensuales Sugeridas</h3>
+    <div class="planes-grid">
+      
+      <!-- PLAN BÁSICO -->
+      <div class="plan-card" id="plan-basico" onclick="selectPlan('Básico', 4, 600000)">
+        <div class="plan-header">
+          <h4 class="plan-name">Plan Soporte Básico</h4>
+          <span class="plan-hours">Bolsa de 4 Horas / mes</span>
+          <div class="plan-price">$600.000 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary);">/mes</span></div>
+          <span class="plan-price-subtitle">(Tarifa: $150.000 / hora)</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Actualización básica de precios/stock</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Carga de hasta 12 productos/mes</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Soporte técnico por correo</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tiempo de respuesta: 48 horas</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PLAN CRECIMIENTO (POPULAR) -->
+      <div class="plan-card active popular" id="plan-crecimiento" onclick="selectPlan('Crecimiento', 8, 1200000)">
+        <div class="plan-header">
+          <h4 class="plan-name">Plan Gestión Activa</h4>
+          <span class="plan-hours">Bolsa de 8 Horas / mes</span>
+          <div class="plan-price">$1.200.000 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary);">/mes</span></div>
+          <span class="plan-price-subtitle">(Tarifa: $150.000 / hora)</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Gestión ágil de inventarios y precios</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Carga de productos + optimización SEO</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Ajustes estéticos menores y banners</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Soporte prioritario por WhatsApp</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tiempo de respuesta: 24 horas</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PLAN PREMIUM -->
+      <div class="plan-card" id="plan-premium" onclick="selectPlan('Premium', 12, 1800000)">
+        <div class="plan-header">
+          <h4 class="plan-name">Plan Partner Total</h4>
+          <span class="plan-hours">Bolsa de 12 Horas / mes</span>
+          <div class="plan-price">$1.800.000 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary);">/mes</span></div>
+          <span class="plan-price-subtitle">(Tarifa: $150.000 / hora)</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Actualización ilimitada en el volumen de horas</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Desarrollo personalizado (Custom Liquid/CSS)</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Configuración y sincronización de Apps complejas</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Canal prioritario exclusivo en Slack</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tiempo de respuesta: &lt; 12 horas</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- CALCULADORA DE PROYECTOS & ESTIMADOR -->
+    <section class="glass-card">
+      <div style="margin-bottom: 24px; border-bottom: 1px solid var(--border-glow); padding-bottom: 16px;">
+        <span class="badge badge-secondary" style="margin-bottom: 10px;">Calculadora Interactiva</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;">Simulador de Consumo Operativo</h3>
+        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+          Calcula cuántas horas aproximadas requieres al mes seleccionando el volumen estimado de las actividades más comunes.
+        </p>
+      </div>
+
+      <div class="calculator-grid">
+        
+        <!-- Controles de Tareas -->
+        <div class="task-list">
+          
+          <div class="task-item">
+            <div class="task-info">
+              <span class="task-name">Cargar nuevo celular al catálogo</span>
+              <span class="task-time">Tiempo estimado: 15 min / equipo (Incluye fotos, SKU, variantes y ficha técnica)</span>
+            </div>
+            <div class="counter-controls">
+              <button class="counter-btn" onclick="updateCounter('products', -1)">-</button>
+              <span class="counter-value" id="count-products">0</span>
+              <button class="counter-btn" onclick="updateCounter('products', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-info">
+              <span class="task-name">Cambio de precio / Edición rápida de stock</span>
+              <span class="task-time">Tiempo estimado: 5 min / edición</span>
+            </div>
+            <div class="counter-controls">
+              <button class="counter-btn" onclick="updateCounter('prices', -1)">-</button>
+              <span class="counter-value" id="count-prices">0</span>
+              <button class="counter-btn" onclick="updateCounter('prices', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-info">
+              <span class="task-name">Diseño de banners promocionales</span>
+              <span class="task-time">Tiempo estimado: 1.5 horas / banner (Para carrusel o colecciones)</span>
+            </div>
+            <div class="counter-controls">
+              <button class="counter-btn" onclick="updateCounter('banners', -1)">-</button>
+              <span class="counter-value" id="count-banners">0</span>
+              <button class="counter-btn" onclick="updateCounter('banners', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-info">
+              <span class="task-name">Ajustes HTML/CSS o Integración de Apps</span>
+              <span class="task-time">Tiempo estimado: 2 horas / cambio o configuración</span>
+            </div>
+            <div class="counter-controls">
+              <button class="counter-btn" onclick="updateCounter('apps', -1)">-</button>
+              <span class="counter-value" id="count-apps">0</span>
+              <button class="counter-btn" onclick="updateCounter('apps', 1)">+</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Panel de Resultados de la Calculadora -->
+        <div class="glass-card calc-results">
+          <div class="result-block">
+            <span class="result-label">Tiempo Estimado Requerido</span>
+            <span class="result-hours" id="total-time-estimate">0 horas</span>
+          </div>
+
+          <hr style="border: none; border-bottom: 1px solid var(--border-glow); margin-bottom: 20px;">
+
+          <div class="result-block">
+            <span class="result-label">Presupuesto Sugerido Mensual</span>
+            <span class="result-value" id="total-cost-estimate">$0</span>
+            <span style="font-size: 0.72rem; color: var(--text-muted); display: block; margin-top: 4px;">En base a la tarifa de $150.000 / hora</span>
+          </div>
+
+          <!-- Slider Personalizado de Horas Directas -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="form-label" style="font-size: 0.75rem;">Ajuste manual de horas:</span>
+              <span style="color: var(--accent-secondary); font-weight: bold;" id="slider-hours-value">8 horas</span>
+            </div>
+            <input type="range" min="4" max="32" step="1" value="8" class="custom-slider" id="hours-slider" oninput="handleSliderChange(this.value)">
+            <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">
+              <span>Mínimo: 4h</span>
+              <span>16h</span>
+              <span>Máximo: 32h</span>
+            </div>
+          </div>
+
+          <div class="recommendation-badge" id="recommendation-text">
+            Recomendamos el <strong>Plan Soporte Básico</strong> (4 Horas) para iniciar
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TÉRMINOS Y CONDICIONES -->
+    <section class="glass-card">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+        <span style="color: var(--accent-warning);">📝</span> Términos del Acuerdo Operativo
+      </h3>
+      <ol class="terms-list">
+        <li>Las horas se contabilizan mensualmente y no son acumulables para el siguiente mes calendario, a fin de garantizar la disponibilidad de agenda técnica.</li>
+        <li>El reporte de tiempo consumido se envía de manera quincenal con el desglose detallado de las tareas realizadas en Shopify.</li>
+        <li>La facturación se realiza de manera anticipada en los primeros cinco (5) días hábiles de cada mes.</li>
+        <li>Si el cliente requiere más horas de las contratadas en el mes, se notificará previamente y se facturarán de manera excedente con la tarifa preferencial acordada de $150.000 / hora.</li>
+        <li>Los canales de comunicación oficial serán WhatsApp Business y correo electrónico para seguimiento y control de tickets de soporte.</li>
+      </ol>
+    </section>
+
+    <!-- FIRMA Y ACEPTACIÓN DIGITAL -->
+    <section class="glass-card sign-section" id="acceptance-area">
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">Formalización de la Propuesta</h3>
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">Selecciona la bolsa de horas acordada y firma digitalmente para formalizar el inicio del soporte.</p>
+      </div>
+
+      <!-- Contenedor del formulario principal -->
+      <div id="form-container">
+        <form onsubmit="handleAcceptanceSubmit(event)">
+          <div class="sign-grid">
+            
+            <div>
+              <div class="form-group">
+                <label class="form-label">Plan / Bolsa de Horas a Contratar</label>
+                <select class="form-input" id="form-selected-plan" onchange="syncSelectionFromDropdown(this.value)" style="background: rgba(0,0,0,0.6); cursor: pointer;">
+                  <option value="Básico">Plan Soporte Básico (4 Horas / $600.000 COP)</option>
+                  <option value="Crecimiento" selected>Plan Gestión Activa (8 Horas / $1.200.000 COP)</option>
+                  <option value="Premium">Plan Partner Total (12 Horas / $1.800.000 COP)</option>
+                  <option value="Personalizado">Bolsa Personalizada (Horas a Medida)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Nombre del Representante Autorizado</label>
+                <input type="text" id="signer-name" required placeholder="Ej. Carlos Mendoza" class="form-input" oninput="updateSignatureSim(this.value)">
+              </div>
+            </div>
+
+            <div>
+              <div class="form-group">
+                <label class="form-label">Empresa / Marca Comercial</label>
+                <input type="text" id="signer-company" required placeholder="Ej. Celulares Pro Latam" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Firma Digital (Simulación de firma manuscrita)</label>
+                <div class="signature-pad-sim">
+                  <span class="signature-placeholder-text" id="signature-placeholder">Escribe tu nombre a la izquierda para firmar</span>
+                  <span class="signature-rendered" id="signature-rendered"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+            <button type="submit" class="btn btn-primary" style="padding: 14px 30px;">
+              Confirmar y Aceptar Propuesta 🤝
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Pantalla de Éxito -->
+      <div class="success-overlay" id="success-screen">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); border: 2px solid var(--accent-success); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h4 style="font-size: 1.4rem; color: white; font-weight: 700; margin-bottom: 8px;">¡Propuesta Firmada y Aceptada!</h4>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 500px; margin-bottom: 20px;" id="success-message">
+          Se ha formalizado la contratación del plan seleccionado. Se ha enviado una copia digital de este acuerdo al correo de la agencia.
+        </p>
+        <div style="font-family: monospace; font-size: 0.75rem; color: var(--text-muted); background: rgba(255,255,255,0.03); padding: 8px 16px; border-radius: 4px; border: 1px solid var(--border-glow);">
+          Código Único de Registro: <span id="success-hash">#SH-8849201-OK</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- BARRA DE ACCIONES FLOTANTES (Oculta al imprimir) -->
+  <div class="actions-bar">
+    <button class="btn btn-secondary" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Exportar a PDF / Imprimir
+    </button>
+    <button class="btn btn-primary" onclick="scrollToAcceptance()">
+      Contratar Soporte 🚀
+    </button>
+  </div>
+
+  <script>
+    // Configuración Inicial del Estado de la Propuesta
+    let selectedPlanName = 'Crecimiento';
+    let selectedPlanHours = 8;
+    let selectedPlanPrice = 1200000;
+
+    // Contadores del estimador
+    const tasks = {
+      products: 0,
+      prices: 0,
+      banners: 0,
+      apps: 0
+    };
+
+    // Tiempos en minutos por cada unidad de tarea
+    const taskTimes = {
+      products: 15,
+      prices: 5,
+      banners: 90,
+      apps: 120
+    };
+
+    // Inicialización de la fecha actual
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      document.getElementById('current-date').innerText = `${dd}/${mm}/${yyyy}`;
+      
+      // Actualizar la calculadora inicial
+      calculateEstimate();
+    });
+
+    // Función para cambiar de Plan haciendo click en las tarjetas
+    function selectPlan(name, hours, price) {
+      selectedPlanName = name;
+      selectedPlanHours = hours;
+      selectedPlanPrice = price;
+
+      // Actualizar estilo visual de las tarjetas
+      document.querySelectorAll('.plan-card').forEach(card => card.classList.remove('active'));
+      
+      let selectedCardId = 'plan-basico';
+      if (name === 'Crecimiento') selectedCardId = 'plan-crecimiento';
+      if (name === 'Premium') selectedCardId = 'plan-premium';
+      document.getElementById(selectedCardId).classList.add('active');
+
+      // Sincronizar el slider
+      document.getElementById('hours-slider').value = hours;
+      document.getElementById('slider-hours-value').innerText = `${hours} horas`;
+
+      // Sincronizar el dropdown de firmas
+      const dropdown = document.getElementById('form-selected-plan');
+      if (name === 'Básico') dropdown.value = 'Básico';
+      if (name === 'Crecimiento') dropdown.value = 'Crecimiento';
+      if (name === 'Premium') dropdown.value = 'Premium';
+
+      // Actualizar la recomendación de la calculadora
+      updateRecommendationText(hours, price, false);
+    }
+
+    // Manejar el cambio manual del slider de horas
+    function handleSliderChange(hours) {
+      hours = parseInt(hours);
+      selectedPlanHours = hours;
+      selectedPlanPrice = hours * 150000;
+      
+      document.getElementById('slider-hours-value').innerText = `${hours} horas`;
+
+      // Desactivar tarjetas para activar la adecuada
+      document.querySelectorAll('.plan-card').forEach(card => card.classList.remove('active'));
+      
+      const dropdown = document.getElementById('form-selected-plan');
+      if (hours === 4) {
+        document.getElementById('plan-basico').classList.add('active');
+        dropdown.value = 'Básico';
+        selectedPlanName = 'Básico';
+      } else if (hours === 8) {
+        document.getElementById('plan-crecimiento').classList.add('active');
+        dropdown.value = 'Crecimiento';
+        selectedPlanName = 'Crecimiento';
+      } else if (hours === 12) {
+        document.getElementById('plan-premium').classList.add('active');
+        dropdown.value = 'Premium';
+        selectedPlanName = 'Premium';
+      } else {
+        dropdown.value = 'Personalizado';
+        selectedPlanName = 'Personalizado';
+      }
+
+      updateRecommendationText(hours, selectedPlanPrice, true);
+    }
+
+    // Sincronizar el selector de plan del formulario
+    function syncSelectionFromDropdown(val) {
+      if (val === 'Básico') selectPlan('Básico', 4, 600000);
+      else if (val === 'Crecimiento') selectPlan('Crecimiento', 8, 1200000);
+      else if (val === 'Premium') selectPlan('Premium', 12, 1800000);
+      else {
+        // Personalizado
+        const currentHours = parseInt(document.getElementById('hours-slider').value);
+        handleSliderChange(currentHours);
+      }
+    }
+
+    // Controladores de los contadores de tareas del estimador
+    function updateCounter(type, change) {
+      tasks[type] = Math.max(0, tasks[type] + change);
+      document.getElementById(`count-${type}`).innerText = tasks[type];
+      calculateEstimate();
+    }
+
+    // Lógica matemática para estimar horas y costo según tareas seleccionadas
+    function calculateEstimate() {
+      let totalMinutes = 0;
+      for (const key in tasks) {
+        totalMinutes += tasks[key] * taskTimes[key];
+      }
+
+      const rawHours = totalMinutes / 60;
+      let hoursNeeded = Math.ceil(rawHours);
+      
+      // Si hay estimación pero es menor a 4, redondeamos a 4 (que es la bolsa mínima)
+      if (hoursNeeded > 0 && hoursNeeded < 4) {
+        hoursNeeded = 4;
+      }
+
+      const formattedMinutes = totalMinutes % 60;
+      const formattedHours = Math.floor(rawHours);
+
+      // Mostrar el tiempo estimado de forma legible
+      let timeText = '0 horas';
+      if (totalMinutes > 0) {
+        timeText = `${formattedHours}h ${formattedMinutes > 0 ? formattedMinutes + 'm' : ''}`;
+      }
+      document.getElementById('total-time-estimate').innerText = timeText;
+
+      // Calcular costo estimado basado en horas recomendadas
+      const estimatedCost = hoursNeeded * 150000;
+      document.getElementById('total-cost-estimate').innerText = `$${estimatedCost.toLocaleString('es-MX')}`;
+
+      // Sugerir un plan en base a las horas necesarias
+      if (hoursNeeded > 0) {
+        updateRecommendationText(hoursNeeded, estimatedCost, true);
+        
+        // Sincronizar el slider e interfaz con la recomendación estimada
+        document.getElementById('hours-slider').value = Math.min(32, Math.max(4, hoursNeeded));
+        document.getElementById('slider-hours-value').innerText = `${hoursNeeded} horas`;
+        
+        selectedPlanHours = hoursNeeded;
+        selectedPlanPrice = estimatedCost;
+      }
+    }
+
+    // Actualizar dinámicamente el mensaje de recomendación del plan
+    function updateRecommendationText(hours, price, isCustom) {
+      const recBox = document.getElementById('recommendation-text');
+      let planText = '';
+
+      if (hours <= 4) {
+        planText = `Recomendamos el <strong>Plan Soporte Básico</strong> (4 Horas - $600.000)`;
+        if (isCustom && hours === 4) selectPlan('Básico', 4, 600000);
+      } else if (hours <= 8) {
+        planText = `Recomendamos el <strong>Plan Gestión Activa</strong> (8 Horas - $1.200.000)`;
+        if (isCustom && hours === 8) selectPlan('Crecimiento', 8, 1200000);
+      } else if (hours <= 12) {
+        planText = `Recomendamos el <strong>Plan Partner Total</strong> (12 Horas - $1.800.000)`;
+        if (isCustom && hours === 12) selectPlan('Premium', 12, 1800000);
+      } else {
+        planText = `Bolsa a medida sugerida: <strong>${hours} Horas</strong> por <strong>$${price.toLocaleString('es-MX')} COP</strong> al mes.`;
+      }
+
+      recBox.innerHTML = planText;
+    }
+
+    // Efecto visual de renderizado de la firma digital
+    function updateSignatureSim(val) {
+      const placeholder = document.getElementById('signature-placeholder');
+      const rendered = document.getElementById('signature-rendered');
+
+      if (val.trim() === '') {
+        placeholder.style.display = 'block';
+        rendered.style.display = 'none';
+        rendered.innerText = '';
+      } else {
+        placeholder.style.display = 'none';
+        rendered.style.display = 'block';
+        rendered.innerText = val;
+      }
+    }
+
+    // Desplazamiento suave al formulario de firma
+    function scrollToAcceptance() {
+      document.getElementById('acceptance-area').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Envío y registro del acuerdo comercial
+    function handleAcceptanceSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('signer-name').value;
+      const company = document.getElementById('signer-company').value;
+      
+      let finalPlanDetail = '';
+      if (selectedPlanName === 'Personalizado') {
+        finalPlanDetail = `Bolsa Personalizada de ${selectedPlanHours} Horas al mes por un valor de $${selectedPlanPrice.toLocaleString('es-MX')} COP`;
+      } else {
+        finalPlanDetail = `Plan ${selectedPlanName} (${selectedPlanHours} Horas / $${selectedPlanPrice.toLocaleString('es-MX')} COP)`;
+      }
+
+      // Ocultar formulario, mostrar pantalla de éxito
+      document.getElementById('form-container').style.display = 'none';
+      
+      const successScreen = document.getElementById('success-screen');
+      successScreen.style.display = 'flex';
+
+      const successMsg = document.getElementById('success-message');
+      successMsg.innerHTML = `Propuesta formalizada para la marca <strong>${company}</strong>, autorizada digitalmente por <strong>${name}</strong> para el <strong>${finalPlanDetail}</strong>.<br><br>Se ha generado el registro y la asignación horaria en la agenda del equipo técnico de la agencia.`;
+
+      // Generar Hash Único de aceptación
+      const uniqueHash = '#SH-' + Math.floor(1000000 + Math.random() * 9000000) + '-OK';
+      document.getElementById('success-hash').innerText = uniqueHash;
+
+      // Mensaje en consola simulando trigger de correo
+      console.log(`[API Trigger] Contrato creado con éxito. Firma: ${name}, Empresa: ${company}, Detalle: ${finalPlanDetail}. Hash: ${uniqueHash}`);
+    }
+  </script>
+</body>
+</html>
